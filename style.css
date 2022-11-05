@@ -64,12 +64,18 @@ body {
 }
 
 #loader {
-  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 50px;
+  height: 100px;
   width: 100px;
+
+  display: flex;
+  opacity: 0;
+}
+
+#loader.show {
+  opacity: 1;
 }
 .circle {
   background-color: gray;
