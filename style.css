@@ -83,17 +83,14 @@ body {
   width: 10px;
   border-radius: 50%;
   margin: 5px;
-  animation: 800ms bounce infinite alternate;
+  animation: 400ms bounce infinite alternate;
 }
 
-.circle:nth-of-type(1) {
+.circle:nth-of-type(2) {
   animation-delay: 100ms;
 }
-.circle:nth-of-type(2) {
-  animation-delay: 200ms;
-}
 .circle:nth-of-type(3) {
-  animation-delay: 300ms;
+  animation-delay: 200ms;
 }
 
 @keyframes bounce {

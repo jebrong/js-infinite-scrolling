@@ -1,8 +1,10 @@
 const postsContainer = document.querySelector("#posts-container");
 
+const filter = document.querySelector("#filter");
+
 const loader = document.querySelector("#loader");
 
-let numOfPosts = 4;
+let numOfPosts = 5;
 let page = 1;
 
 const getApi = async () => {
@@ -52,6 +54,23 @@ window.addEventListener("scroll", (e) => {
   if (scrollTop + clientHeight >= scrollHeight - 5) {
     showLoading();
   }
+});
+
+filter.addEventListener("input", () => {
+  let allPosts = document.querySelectorAll(".post");
+
+  let typedWord = filter.value;
+
+  allPosts.forEach((post) => {
+    const title = post.querySelector(".post-title").innerText;
+    const body = post.querySelector(".post-body").innerText;
+
+    if (title.indexOf(typedWord) > -1 || body.indexOf(typedWord) > -1) {
+      post.style.display = "flex";
+    } else {
+      post.style.display = "none";
+    }
+  });
 });
 
 showPosts();
