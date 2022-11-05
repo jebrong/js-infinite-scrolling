@@ -58,17 +58,14 @@ window.addEventListener("scroll", (e) => {
 
 filter.addEventListener("input", () => {
   let allPosts = document.querySelectorAll(".post");
+  let typedWord = filter.value.toLowerCase();
 
-  let typedWord = filter.value;
-
-  allPosts.forEach((post) => {
-    const title = post.querySelector(".post-title").innerText;
-    const body = post.querySelector(".post-body").innerText;
-
-    if (title.indexOf(typedWord) > -1 || body.indexOf(typedWord) > -1) {
-      post.style.display = "flex";
+  allPosts.forEach((e) => {
+    let allText = e.innerText.toLowerCase();
+    if (allText.includes(typedWord)) {
+      e.style.display = "flex";
     } else {
-      post.style.display = "none";
+      e.style.display = "none";
     }
   });
 });
